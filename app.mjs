@@ -30,7 +30,7 @@ await client.connect()
 
 
 const yourNameAndEmoji = { name: 'barry', emoji: '🐸' }; //don't use my frog. 
-const yourNameAndEmoji = { name: 'carly', emoji: '🦖' };
+const carlyNameAndEmoji = { name: 'carly', emoji: '🦖' };
 
 
 //app instantiations
@@ -101,7 +101,6 @@ app.get('/api/init-emoji', async (req, res) => {
     res.status(500).json({ error: 'Failed to retrieve emoji' });
   }
 })
-
 
 
 /*
