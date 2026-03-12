@@ -13,7 +13,7 @@
 | **Issue** | https://github.com/carlycopley/full-stack-tech-exam/issues/2 | 
 | **Pull Request** | https://github.com/carlycopley/full-stack-tech-exam/pull/1 | 
 | **Milestone** | ?? | 
-| **Successful CI/CD Action** | [https://github.com/your-username/your-repo-name/actions/runs/your-run-id](https://github.com/your-username/your-repo-name/actions/runs/your-run-id) | 
+| **UNSuccessful CI/CD Action** | https://github.com/carlycopley/full-stack-tech-exam/actions/runs/23021016373/job/66861401191 | 
 | **ssh cmd to your gcp** | `ssh -i student-key bcumbie@your.static.external.ip` | 
 
 ---
