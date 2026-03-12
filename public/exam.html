@@ -3,28 +3,118 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Full Stack Tech Exam</title>
+  <style>
+    /* source: Chatgpt */
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f8;
+      justify-content: center;
+    }
+
+    h1 {
+      text-align: center;
+      justify-content: center;
+    }
+
+    div {
+      margin-top: 80px;
+      background: white;
+      padding: 30px 40px;
+      border-radius: 8px;
+    }
+
+    form {
+      margin-top: 15px;
+      display: flex;
+      gap: 10px;
+    }
+
+    input[type="submit"]:hover {
+      background: #1a68d1;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
+
   <h1>Full Stack Tech Exam</h1>
-  
-  <!-- 💁🏼‍♂️ you may need to initialize some data before searching. Check the server endpoints -->
-  
+
   <div>
     <h2>Search for Name</h2>
-    <!-- 
-    this form doesn't let you receive data back and put into the <p id="result">.
-    what do we need to do here with an external <script> 
-    -->
-    <form id="nameForm" method="post" action="api/get-name/">
+
+    <form id="nameForm">
       <label for="userName">Enter name:</label>
       <input id="userName" name="userName" placeholder="Enter a name (e.g., barry)" required>
-      <input type="submit" value="Search"> 
+      <input type="submit" value="Search">
     </form>
+
     <p id="result"></p>
   </div>
+
+  <script>
+    fetch('/api/init-emoji', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name })
+    }).then(res => res.json()).then(console.log).catch(console.error);
+
+
+    const form = document.getElementById("nameForm");
+    const result = document.getElementById("result");
+
+    /*
+    handle form submit
+    */
+
+    form.addEventListener("submit", async (e) => {
+
+      e.preventDefault();
+
+      const userName = document.getElementById("userName").value;
+
+      try {
+
+        const response = await fetch("/api/get-name", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ userName })
+        });
+
+        const data = await response.json();
+
+        if (data.error) {
+          result.textContent = data.error;
+          return;
+        }
+
+        result.textContent = `${data.name} ${data.emoji}`;
+
+      } catch (err) {
+        result.textContent = "Server error";
+        console.error(err);
+      }
+
+    });
+
+    // Run once when the page loads
+    window.addEventListener('load', () => {
+      fetch('/api/init-emoji')
+        .then(res => res.json())
+        .then(data => console.log("Init response:", data))
+        .catch(err => console.error("Init failed:", err));
+    });
+
+  </script>
+
 </body>
 
 </html>

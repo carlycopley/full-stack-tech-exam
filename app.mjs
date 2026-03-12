@@ -1,8 +1,11 @@
-
+//app.mjs
 import express from 'express';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { MongoClient, ServerApiVersion, ObjectId } from 'mongodb';
+import 'dotenv/config';
+
+
 
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -22,7 +25,12 @@ const client = new MongoClient(uri, {
   }
 });
 
+//i add this:
+await client.connect()
+
+
 const yourNameAndEmoji = { name: 'barry', emoji: '🐸' }; //don't use my frog. 
+const yourNameAndEmoji = { name: 'carly', emoji: '🦖' };
 
 
 //app instantiations
@@ -93,6 +101,8 @@ app.get('/api/init-emoji', async (req, res) => {
     res.status(500).json({ error: 'Failed to retrieve emoji' });
   }
 })
+
+
 
 /*
 👇🏻notice the refactored app.listen:
