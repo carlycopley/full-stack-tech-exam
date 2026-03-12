@@ -59,12 +59,6 @@
   </div>
 
   <script>
-    fetch('/api/init-emoji', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: name })
-    }).then(res => res.json()).then(console.log).catch(console.error);
-
 
     const form = document.getElementById("nameForm");
     const result = document.getElementById("result");
