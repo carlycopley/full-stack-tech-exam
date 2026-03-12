@@ -1,6 +1,6 @@
-># Full Stack Tech Exam - Readme Template
+># Full Stack Tech Exam 
 
-**Name:** [Your Name Here]
+**Name:** Carly Copley
 
 ## 🔗 Required Links
 
