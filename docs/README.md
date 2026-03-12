@@ -12,7 +12,7 @@
 | **Production Server (GCP)** | http://34.187.193.75 | 
 | **Issue** | https://github.com/carlycopley/full-stack-tech-exam/issues/2 | 
 | **Pull Request** | https://github.com/carlycopley/full-stack-tech-exam/pull/1 | 
-| **Milestone** | ?? | 
+| **Dev Branch** | https://github.com/carlycopley/full-stack-tech-exam/tree/dev | 
 | **Successful CI/CD Action** | [https://github.com/carlycopley/full-stack-tech-exam/actions/runs/23021016373/job/66861401191](https://github.com/carlycopley/full-stack-tech-exam/actions/runs/23022340812) | 
 | **ssh cmd to your gcp** | `ssh -i ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDkJLauc1AmvJVRFWfen7sCAE1vtLCyG26HoJi1FL2Y0 ccopley1@CSM245-LAB21
  bcumbie@34.187.193.75` | 
