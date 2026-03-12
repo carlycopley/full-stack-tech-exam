@@ -7,7 +7,7 @@
 | Component | Link | 
 |-----------|------|
 | **GitHub Repository** | https://github.com/carlycopley/full-stack-tech-exam | 
-| **GitHub Pages (docs/)** | https://your-username.github.io/full-stack-tech-exam/ | 
+| **GitHub Pages (docs/)** | https://barrycumbie.github.io/full-stack-tech-exam/ | 
 | **Dev Server (Render)** | https://full-stack-tech-exam-nejm.onrender.com | 
 | **Production Server (GCP)** | 34.187.193.75 | 
 | **Issue** | [https://github.com/your-username/your-repo-name/issues/1](https://github.com/your-username/your-repo-name/issues/1) | 
